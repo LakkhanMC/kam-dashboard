@@ -1,20 +1,8 @@
-from utils.paths import data_path
 import streamlit as st
 import pandas as pd
+from utils.paths import data_path
+from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-@st.cache_data
-def load_data():
-    dealer = pd.read_csv(data_path("dealer_master.csv"))
-    sales = pd.read_csv(data_path("sales_transactions.csv"))
-    inv = pd.read_csv(data_path("inventory_stock.csv"))
-    claims = pd.read_csv(data_path("warranty_claims.csv"))
-    crm = pd.read_csv(data_path("crm_engagement.csv"))
-    feedback = pd.read_csv(data_path("feedback_forms.csv"))
-    return dealer, sales, inv, claims, crm, feedback
-import streamlit as st
-import pandas as pd
-from utils.paths import data_path
-from models.forecast_model import forecast_sales
 
 @st.cache_data
 def load_data():
@@ -23,54 +11,70 @@ def load_data():
     return dealer, sales
 
 
-def main():
-    st.title("Forecast & Growth Opportunities")
-
-    dealer, sales = load_data()
-    horizon = st.slider("Months Ahead", 1, 6, 3)
-
-    fc = forecast_sales(sales, horizon)
-
-    sel = st.selectbox("Dealer", dealer["dealer_id"])
-    d = fc[fc["dealer_id"] == sel]
-
-    if d.empty:
-        st.warning("No forecast")
-        return
-
-    st.subheader("Forecast Units")
-    st.dataframe(d)
-
-    wide = d.pivot_table(index="month", columns="model", values="forecast_units")
-    st.line_chart(wide)
+def forecast_ts(series, periods=3):
+    """
+    Train a SARIMA model on past dealer/model sales
+    """
+    model = SARIMAX(
+        series,
+        order=(1,1,1),
+        seasonal_order=(1,1,1,12),  # yearly seasonality
+        enforce_stationarity=False,
+        enforce_invertibility=False,
+    )
+    results = model.fit(disp=False)
+    return results.forecast(periods)
 
 
-if __name__ == "__main__":
-    main()
-    
-    def generate_forecast(sales, dealer_id, months):
-    df = sales[sales["dealer_id"] == dealer_id].copy()
-    df["date"] = pd.to_datetime(df["date"])
-    
-    result = []
+def build_forecast(sales_df, dealer_id, months):
+    dealer_df = sales_df[sales_df["dealer_id"] == dealer_id].copy()
+    dealer_df["date"] = pd.to_datetime(dealer_df["date"])
 
-    for model_name in df["model"].unique():
+    results = []
+    for model_name in dealer_df["model"].unique():
         ts = (
-            df[df["model"] == model_name]
+            dealer_df[dealer_df["model"] == model_name]
             .set_index("date")["units_sold"]
             .resample("M")
             .sum()
         )
 
-        fc = forecast_model(ts, periods=months)
+        if len(ts) < 6:
+            continue  # not enough data
 
-        # build rows
+        fc = forecast_ts(ts, periods=months)
+
         for i, val in enumerate(fc):
-            result.append({
+            results.append({
                 "dealer_id": dealer_id,
                 "model": model_name,
                 "month": (ts.index[-1] + pd.DateOffset(months=i+1)).strftime("%Y-%m"),
-                "forecast_units": round(val, 2)
+                "forecast_units": float(val)
             })
 
-    return pd.DataFrame(result)
+    return pd.DataFrame(results)
+
+
+def main():
+    st.title("📈 Forecast & Growth Opportunities")
+
+    dealer_df, sales_df = load_data()
+
+    months = st.slider("Months Ahead", 1, 12, 3)
+    dealer_id = st.selectbox("Dealer", dealer_df["dealer_id"])
+
+    forecast = build_forecast(sales_df, dealer_id, months)
+
+    if forecast.empty:
+        st.warning("Not enough historical data to forecast.")
+        return
+
+    st.subheader("Forecast Units")
+    st.dataframe(forecast, hide_index=True)
+
+    chart_df = forecast.pivot(index="month", columns="model", values="forecast_units")
+    st.line_chart(chart_df)
+
+
+if __name__ == "__main__":
+    main()
