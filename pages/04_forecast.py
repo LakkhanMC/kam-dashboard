@@ -1,13 +1,24 @@
-import streamlit as st
+from utils.paths import data_path
 import pandas as pd
-
-from models.forecast_model import compute_simple_forecast
-
 
 @st.cache_data
 def load_data():
-    dealer = pd.read_csv("data/dealer_master.csv")
-    sales = pd.read_csv("data/sales_transactions.csv")
+    dealer = pd.read_csv(data_path("dealer_master.csv"))
+    sales = pd.read_csv(data_path("sales_transactions.csv"))
+    inv = pd.read_csv(data_path("inventory_stock.csv"))
+    claims = pd.read_csv(data_path("warranty_claims.csv"))
+    crm = pd.read_csv(data_path("crm_engagement.csv"))
+    feedback = pd.read_csv(data_path("feedback_forms.csv"))
+    return dealer, sales, inv, claims, crm, feedback
+import streamlit as st
+import pandas as pd
+from utils.paths import data_path
+from models.forecast_model import forecast_sales
+
+@st.cache_data
+def load_data():
+    dealer = pd.read_csv(data_path("dealer_master.csv"))
+    sales = pd.read_csv(data_path("sales_transactions.csv"))
     return dealer, sales
 
 
@@ -15,41 +26,22 @@ def main():
     st.title("Forecast & Growth Opportunities")
 
     dealer, sales = load_data()
+    horizon = st.slider("Months Ahead", 1, 6, 3)
 
-    months_ahead = st.slider("Forecast horizon (months)", min_value=1, max_value=6, value=3)
-    forecast_df = compute_simple_forecast(sales, months_ahead=months_ahead)
+    fc = forecast_sales(sales, horizon)
 
-    dealer_id = st.selectbox(
-        "Select Dealer",
-        options=dealer["dealer_id"],
-        format_func=lambda d: f"{d} – {dealer.loc[dealer['dealer_id'] == d, 'dealer_name'].values[0]}"
-    )
+    sel = st.selectbox("Dealer", dealer["dealer_id"])
+    d = fc[fc["dealer_id"] == sel]
 
-    d_forecast = forecast_df[forecast_df["dealer_id"] == dealer_id]
-    if d_forecast.empty:
-        st.write("No forecast data available for this dealer.")
+    if d.empty:
+        st.warning("No forecast")
         return
 
-    model_choice = st.selectbox("Filter by model", options=["All"] + sorted(d_forecast["model"].unique().tolist()))
-    if model_choice != "All":
-        d_forecast = d_forecast[d_forecast["model"] == model_choice]
+    st.subheader("Forecast Units")
+    st.dataframe(d)
 
-    st.subheader("Forecasted Units")
-    chart_df = d_forecast.pivot_table(
-        index="month",
-        columns="model",
-        values="forecast_units"
-    ).reset_index()
-
-    st.line_chart(chart_df, x="month")
-
-    st.subheader("Opportunity Table (Simple Heuristic)")
-    # Compare forecast vs portfolio average to highlight high-growth dealers later, kept local here
-    opp = d_forecast.groupby("model")["forecast_units"].sum().reset_index()
-    opp["comment"] = opp["forecast_units"].rank(ascending=False).apply(
-        lambda r: "High potential – prioritize allocations" if r <= 2 else "Moderate"
-    )
-    st.dataframe(opp)
+    wide = d.pivot_table(index="month", columns="model", values="forecast_units")
+    st.line_chart(wide)
 
 
 if __name__ == "__main__":
