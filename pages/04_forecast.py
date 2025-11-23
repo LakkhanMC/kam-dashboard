@@ -1,49 +1,26 @@
-from utils.paths import data_path
-import streamlit as st
-import pandas as pd
+def generate_forecast(sales, dealer_id, months):
+    df = sales[sales["dealer_id"] == dealer_id].copy()
+    df["date"] = pd.to_datetime(df["date"])
+    
+    result = []
 
-@st.cache_data
-def load_data():
-    dealer = pd.read_csv(data_path("dealer_master.csv"))
-    sales = pd.read_csv(data_path("sales_transactions.csv"))
-    inv = pd.read_csv(data_path("inventory_stock.csv"))
-    claims = pd.read_csv(data_path("warranty_claims.csv"))
-    crm = pd.read_csv(data_path("crm_engagement.csv"))
-    feedback = pd.read_csv(data_path("feedback_forms.csv"))
-    return dealer, sales, inv, claims, crm, feedback
-import streamlit as st
-import pandas as pd
-from utils.paths import data_path
-from models.forecast_model import forecast_sales
+    for model_name in df["model"].unique():
+        ts = (
+            df[df["model"] == model_name]
+            .set_index("date")["units_sold"]
+            .resample("M")
+            .sum()
+        )
 
-@st.cache_data
-def load_data():
-    dealer = pd.read_csv(data_path("dealer_master.csv"))
-    sales = pd.read_csv(data_path("sales_transactions.csv"))
-    return dealer, sales
+        fc = forecast_model(ts, periods=months)
 
+        # build rows
+        for i, val in enumerate(fc):
+            result.append({
+                "dealer_id": dealer_id,
+                "model": model_name,
+                "month": (ts.index[-1] + pd.DateOffset(months=i+1)).strftime("%Y-%m"),
+                "forecast_units": round(val, 2)
+            })
 
-def main():
-    st.title("Forecast & Growth Opportunities")
-
-    dealer, sales = load_data()
-    horizon = st.slider("Months Ahead", 1, 6, 3)
-
-    fc = forecast_sales(sales, horizon)
-
-    sel = st.selectbox("Dealer", dealer["dealer_id"])
-    d = fc[fc["dealer_id"] == sel]
-
-    if d.empty:
-        st.warning("No forecast")
-        return
-
-    st.subheader("Forecast Units")
-    st.dataframe(d)
-
-    wide = d.pivot_table(index="month", columns="model", values="forecast_units")
-    st.line_chart(wide)
-
-
-if __name__ == "__main__":
-    main()
+    return pd.DataFrame(result)
