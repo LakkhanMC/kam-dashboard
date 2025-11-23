@@ -209,5 +209,3 @@ if __name__ == "__main__":
     crm = generate_crm_engagement(dealers)
     feedback = generate_feedback_forms(dealers)
     print("Mock data generated in /data directory.")
-
-python data/generate_mock_data.py
