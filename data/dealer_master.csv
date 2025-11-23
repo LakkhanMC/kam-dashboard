@@ -1,0 +1,51 @@
+dealer_id,dealer_name,region,state,city,tier,years_partnered,ownership_type
+D001,Dealer_D001,North,Delhi,Chennai,T1,7,Franchise
+D002,Dealer_D002,South,Uttar Pradesh,Mumbai,T3,4,Partner
+D003,Dealer_D003,Central,Delhi,Pune,T1,13,Franchise
+D004,Dealer_D004,North,Maharashtra,Ahmedabad,T3,11,Partner
+D005,Dealer_D005,North,Tamil Nadu,Ahmedabad,T3,8,Partner
+D006,Dealer_D006,Central,Gujarat,Ahmedabad,T2,13,Partner
+D007,Dealer_D007,East,Delhi,Bengaluru,T3,5,Company Owned
+D008,Dealer_D008,East,Karnataka,Bengaluru,T1,7,Company Owned
+D009,Dealer_D009,North,Delhi,Pune,T1,10,Company Owned
+D010,Dealer_D010,East,Tamil Nadu,Chennai,T1,3,Partner
+D011,Dealer_D011,West,Tamil Nadu,Mumbai,T2,7,Franchise
+D012,Dealer_D012,Central,Karnataka,Lucknow,T3,11,Franchise
+D013,Dealer_D013,North,Delhi,Ahmedabad,T2,11,Franchise
+D014,Dealer_D014,South,Delhi,Pune,T2,8,Company Owned
+D015,Dealer_D015,East,Maharashtra,Lucknow,T2,5,Franchise
+D016,Dealer_D016,East,Uttar Pradesh,Mumbai,T3,4,Partner
+D017,Dealer_D017,South,Tamil Nadu,Ahmedabad,T1,8,Company Owned
+D018,Dealer_D018,West,Karnataka,Ahmedabad,T3,8,Company Owned
+D019,Dealer_D019,North,Maharashtra,Delhi,T2,3,Company Owned
+D020,Dealer_D020,East,Delhi,Ahmedabad,T3,6,Partner
+D021,Dealer_D021,East,Maharashtra,Jaipur,T2,5,Partner
+D022,Dealer_D022,West,Maharashtra,Chennai,T1,2,Franchise
+D023,Dealer_D023,Central,Tamil Nadu,Chennai,T3,8,Partner
+D024,Dealer_D024,West,Tamil Nadu,Pune,T2,12,Franchise
+D025,Dealer_D025,South,Tamil Nadu,Jaipur,T1,14,Franchise
+D026,Dealer_D026,North,Maharashtra,Bengaluru,T3,6,Company Owned
+D027,Dealer_D027,Central,Delhi,Pune,T2,2,Partner
+D028,Dealer_D028,West,Tamil Nadu,Chennai,T3,12,Franchise
+D029,Dealer_D029,North,Uttar Pradesh,Chennai,T3,5,Company Owned
+D030,Dealer_D030,North,Karnataka,Pune,T1,1,Company Owned
+D031,Dealer_D031,North,Uttar Pradesh,Chennai,T3,12,Franchise
+D032,Dealer_D032,Central,Delhi,Chennai,T3,10,Partner
+D033,Dealer_D033,Central,Maharashtra,Bengaluru,T2,6,Franchise
+D034,Dealer_D034,Central,Tamil Nadu,Delhi,T3,13,Company Owned
+D035,Dealer_D035,West,Delhi,Mumbai,T2,12,Company Owned
+D036,Dealer_D036,South,Delhi,Ahmedabad,T3,9,Franchise
+D037,Dealer_D037,North,Uttar Pradesh,Jaipur,T1,1,Partner
+D038,Dealer_D038,South,Maharashtra,Jaipur,T3,11,Franchise
+D039,Dealer_D039,East,Tamil Nadu,Pune,T1,11,Partner
+D040,Dealer_D040,South,Uttar Pradesh,Chennai,T2,10,Partner
+D041,Dealer_D041,East,Gujarat,Jaipur,T1,12,Franchise
+D042,Dealer_D042,South,Delhi,Lucknow,T1,12,Partner
+D043,Dealer_D043,Central,Maharashtra,Ahmedabad,T1,14,Franchise
+D044,Dealer_D044,North,Maharashtra,Mumbai,T1,14,Company Owned
+D045,Dealer_D045,North,Tamil Nadu,Ahmedabad,T2,14,Partner
+D046,Dealer_D046,West,Maharashtra,Bengaluru,T3,3,Partner
+D047,Dealer_D047,Central,Gujarat,Ahmedabad,T2,12,Company Owned
+D048,Dealer_D048,South,Delhi,Mumbai,T3,7,Company Owned
+D049,Dealer_D049,East,Gujarat,Pune,T2,4,Partner
+D050,Dealer_D050,North,Uttar Pradesh,Mumbai,T1,9,Company Owned

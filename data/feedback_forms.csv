@@ -1,0 +1,120 @@
+dealer_id,feedback_date,feedback_source,sentiment,comments
+D001,2024-12-27,Ad-hoc Call,,Training for staff is needed.
+D001,2024-09-10,Review Meeting,,Product quality is appreciated.
+D001,2024-06-07,Ad-hoc Call,,More EV models required.
+D001,2024-05-13,Ad-hoc Call,,Timely delivery of vehicles.
+D002,2024-06-09,Review Meeting,,Satisfied with marketing support.
+D002,2024-12-16,Review Meeting,,Product quality is appreciated.
+D002,2024-12-20,Annual Review,,Price discounting pressure in region.
+D002,2024-12-25,Ad-hoc Call,,Warranty delays affecting trust.
+D003,2024-03-26,Ad-hoc Call,,Product quality is appreciated.
+D004,2024-02-12,Review Meeting,,Warranty delays affecting trust.
+D004,2024-06-17,Ad-hoc Call,,Warranty delays affecting trust.
+D005,2024-10-09,Ad-hoc Call,,Product quality is appreciated.
+D005,2024-07-24,Ad-hoc Call,,Product quality is appreciated.
+D005,2024-11-14,Survey,,Product quality is appreciated.
+D006,2024-10-24,Survey,,Satisfied with marketing support.
+D006,2024-01-05,Review Meeting,,Warranty delays affecting trust.
+D007,2024-10-10,Survey,,Training for staff is needed.
+D007,2024-07-08,Review Meeting,,Inventory allocation is good.
+D007,2024-02-05,Ad-hoc Call,,Product quality is appreciated.
+D008,2024-05-01,Review Meeting,,Timely delivery of vehicles.
+D008,2024-05-25,Annual Review,,Timely delivery of vehicles.
+D008,2024-04-11,Survey,,Price discounting pressure in region.
+D009,2024-04-12,Survey,,Product quality is appreciated.
+D010,2024-05-02,Ad-hoc Call,,Timely delivery of vehicles.
+D010,2024-06-09,Survey,,Product quality is appreciated.
+D010,2024-07-08,Ad-hoc Call,,Satisfied with marketing support.
+D010,2024-03-08,Review Meeting,,Warranty delays affecting trust.
+D011,2024-08-10,Ad-hoc Call,,Satisfied with marketing support.
+D012,2024-09-03,Ad-hoc Call,,Satisfied with marketing support.
+D013,2024-02-11,Survey,,Inventory allocation is good.
+D013,2024-08-11,Survey,,Product quality is appreciated.
+D013,2024-05-22,Review Meeting,,Training for staff is needed.
+D013,2024-11-24,Ad-hoc Call,,Training for staff is needed.
+D014,2024-11-17,Ad-hoc Call,,Training for staff is needed.
+D014,2024-12-19,Annual Review,,Timely delivery of vehicles.
+D015,2024-05-20,Annual Review,,Timely delivery of vehicles.
+D016,2024-04-24,Review Meeting,,Inventory allocation is good.
+D016,2024-08-03,Annual Review,,Marketing support is insufficient.
+D016,2024-04-05,Ad-hoc Call,,Timely delivery of vehicles.
+D017,2024-12-25,Annual Review,,Timely delivery of vehicles.
+D017,2024-10-10,Survey,,Marketing support is insufficient.
+D017,2024-03-09,Ad-hoc Call,,Satisfied with marketing support.
+D017,2024-09-01,Review Meeting,,Timely delivery of vehicles.
+D018,2024-12-14,Ad-hoc Call,,Satisfied with marketing support.
+D018,2024-09-10,Annual Review,,Marketing support is insufficient.
+D019,2024-09-03,Ad-hoc Call,,More EV models required.
+D020,2024-02-08,Ad-hoc Call,,Marketing support is insufficient.
+D020,2024-05-02,Annual Review,,Warranty delays affecting trust.
+D020,2024-02-14,Ad-hoc Call,,Timely delivery of vehicles.
+D020,2024-04-11,Survey,,Satisfied with marketing support.
+D021,2024-11-15,Review Meeting,,Satisfied with marketing support.
+D021,2024-04-25,Survey,,Inventory allocation is good.
+D021,2024-02-12,Review Meeting,,Timely delivery of vehicles.
+D022,2024-12-19,Review Meeting,,More EV models required.
+D023,2024-01-13,Review Meeting,,Timely delivery of vehicles.
+D023,2024-12-22,Annual Review,,Inventory allocation is good.
+D023,2024-09-26,Ad-hoc Call,,Satisfied with marketing support.
+D024,2024-03-14,Ad-hoc Call,,Inventory allocation is good.
+D024,2024-04-18,Annual Review,,Satisfied with marketing support.
+D024,2024-06-09,Survey,,Inventory allocation is good.
+D024,2024-01-14,Ad-hoc Call,,Satisfied with marketing support.
+D025,2024-01-08,Survey,,Product quality is appreciated.
+D025,2024-12-24,Review Meeting,,Inventory allocation is good.
+D025,2024-07-27,Survey,,Product quality is appreciated.
+D025,2024-09-14,Annual Review,,Warranty delays affecting trust.
+D026,2024-07-04,Ad-hoc Call,,Training for staff is needed.
+D026,2024-01-26,Ad-hoc Call,,More EV models required.
+D027,2024-02-03,Survey,,Timely delivery of vehicles.
+D027,2024-02-06,Review Meeting,,Product quality is appreciated.
+D027,2024-03-22,Survey,,Product quality is appreciated.
+D027,2024-07-07,Review Meeting,,Satisfied with marketing support.
+D028,2024-05-19,Survey,,Inventory allocation is good.
+D028,2024-01-24,Survey,,Marketing support is insufficient.
+D029,2024-03-17,Annual Review,,Marketing support is insufficient.
+D029,2024-03-11,Survey,,Price discounting pressure in region.
+D030,2024-03-16,Ad-hoc Call,,Inventory allocation is good.
+D030,2024-07-08,Review Meeting,,Warranty delays affecting trust.
+D031,2024-12-23,Annual Review,,Product quality is appreciated.
+D031,2024-07-13,Annual Review,,Inventory allocation is good.
+D032,2024-02-01,Annual Review,,Inventory allocation is good.
+D033,2024-10-27,Review Meeting,,Inventory allocation is good.
+D034,2024-10-18,Review Meeting,,More EV models required.
+D034,2024-10-25,Ad-hoc Call,,Warranty delays affecting trust.
+D034,2024-07-24,Survey,,Timely delivery of vehicles.
+D034,2024-04-25,Annual Review,,Satisfied with marketing support.
+D035,2024-04-23,Review Meeting,,Product quality is appreciated.
+D035,2024-01-06,Ad-hoc Call,,Inventory allocation is good.
+D035,2024-10-10,Review Meeting,,Satisfied with marketing support.
+D035,2024-05-24,Annual Review,,Warranty delays affecting trust.
+D036,2024-05-20,Annual Review,,Product quality is appreciated.
+D036,2024-07-12,Review Meeting,,Inventory allocation is good.
+D037,2024-10-09,Survey,,Marketing support is insufficient.
+D037,2024-08-02,Survey,,Training for staff is needed.
+D038,2024-08-22,Review Meeting,,Training for staff is needed.
+D038,2024-12-10,Survey,,Product quality is appreciated.
+D038,2024-01-16,Review Meeting,,Inventory allocation is good.
+D039,2024-08-05,Review Meeting,,Satisfied with marketing support.
+D039,2024-08-11,Survey,,Product quality is appreciated.
+D040,2024-06-01,Annual Review,,Inventory allocation is good.
+D040,2024-11-05,Annual Review,,Inventory allocation is good.
+D040,2024-08-05,Survey,,Timely delivery of vehicles.
+D040,2024-10-09,Annual Review,,Warranty delays affecting trust.
+D041,2024-02-16,Ad-hoc Call,,Inventory allocation is good.
+D042,2024-04-07,Review Meeting,,Satisfied with marketing support.
+D042,2024-05-15,Ad-hoc Call,,Product quality is appreciated.
+D042,2024-12-22,Annual Review,,Timely delivery of vehicles.
+D042,2024-11-22,Survey,,Inventory allocation is good.
+D043,2024-09-08,Ad-hoc Call,,Inventory allocation is good.
+D044,2024-06-26,Ad-hoc Call,,Product quality is appreciated.
+D044,2024-09-02,Annual Review,,Timely delivery of vehicles.
+D045,2024-02-05,Annual Review,,Inventory allocation is good.
+D046,2024-01-08,Survey,,Warranty delays affecting trust.
+D047,2024-06-19,Ad-hoc Call,,Satisfied with marketing support.
+D047,2024-07-17,Review Meeting,,Training for staff is needed.
+D047,2024-03-12,Ad-hoc Call,,Price discounting pressure in region.
+D047,2024-09-20,Ad-hoc Call,,Inventory allocation is good.
+D048,2024-12-17,Survey,,Product quality is appreciated.
+D049,2024-06-20,Review Meeting,,Inventory allocation is good.
+D050,2024-09-07,Review Meeting,,Timely delivery of vehicles.
